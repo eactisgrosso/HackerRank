@@ -1,0 +1,10 @@
+/Users/mac/Development/Git/HackerRank/obj/Debug/netcoreapp2.0/HackerRank.csproj.CoreCompileInputs.cache
+/Users/mac/Development/Git/HackerRank/obj/Debug/netcoreapp2.0/HackerRank.AssemblyInfoInputs.cache
+/Users/mac/Development/Git/HackerRank/obj/Debug/netcoreapp2.0/HackerRank.AssemblyInfo.cs
+/Users/mac/Development/Git/HackerRank/bin/Debug/netcoreapp2.0/HackerRank.deps.json
+/Users/mac/Development/Git/HackerRank/bin/Debug/netcoreapp2.0/HackerRank.runtimeconfig.json
+/Users/mac/Development/Git/HackerRank/bin/Debug/netcoreapp2.0/HackerRank.runtimeconfig.dev.json
+/Users/mac/Development/Git/HackerRank/bin/Debug/netcoreapp2.0/HackerRank.dll
+/Users/mac/Development/Git/HackerRank/bin/Debug/netcoreapp2.0/HackerRank.pdb
+/Users/mac/Development/Git/HackerRank/obj/Debug/netcoreapp2.0/HackerRank.dll
+/Users/mac/Development/Git/HackerRank/obj/Debug/netcoreapp2.0/HackerRank.pdb
