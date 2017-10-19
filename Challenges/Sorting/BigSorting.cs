@@ -10,7 +10,7 @@ namespace HackerRank.Challenges.Sorting
             string[] unsorted = new string[]{"31415926535897932384626433832795","1","3","10","3","5"};
             Console.WriteLine($"Original array:{string.Join('-', unsorted)}");
             
-            unsorted.QuickSort((string a,string b) => {
+            unsorted.IntroSort((string a,string b) => {
                 return a.CompareOrdinalTo(b);
             });
 
