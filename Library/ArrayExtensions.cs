@@ -194,17 +194,17 @@ namespace HackerRank.Library
         private static void InsertionSort<T>(this T[] array, int lo, int hi, Comparison<T> comparison)
         {
             int i, j;
-            T t;
+            T unsorted;
             for (i = lo; i < hi; i++)
             {
                 j = i;
-                t = array[i + 1];
-                while (j >= lo && comparison(t, array[j]) < 0)
+                unsorted = array[i + 1];
+                while (j >= lo && comparison(array[j],unsorted) > 0)
                 {
                     array[j + 1] = array[j];
                     j--;
                 }
-                array[j + 1] = t;
+                array[j + 1] = unsorted;
             }
         }
         public static void IntroSort<T>(this T[] array) 

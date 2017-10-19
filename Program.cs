@@ -11,7 +11,7 @@ namespace HackerRank
     {
         static void Main(string[] args)
         {
-            IChallenge challenge = new BigSorting();
+            IChallenge challenge = new InsertionSort();
             challenge.Run();
         }
     }
