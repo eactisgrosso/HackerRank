@@ -197,8 +197,8 @@ namespace HackerRank.Library
             T unsorted;
             for (i = lo; i < hi; i++)
             {
-                j = i;
                 unsorted = array[i + 1];
+                j = i;
                 while (j >= lo && comparison(array[j],unsorted) > 0)
                 {
                     array[j + 1] = array[j];
