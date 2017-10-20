@@ -4,6 +4,7 @@ using System.Text;
 
 using HackerRank.Challenges.Strings;
 using HackerRank.Challenges.Sorting;
+using HackerRank.Challenges.GraphTheory;
 using HackerRank.Challenges.DynamicProgramming;
 
 namespace HackerRank
@@ -12,7 +13,7 @@ namespace HackerRank
     {
         static void Main(string[] args)
         {
-            IChallenge challenge = new FibonacciModified();
+            IChallenge challenge = new BFSShortestReach();
             challenge.Run();
         }
     }
