@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 using HackerRank.Challenges.Warmup;
+using HackerRank.Challenges.Implementation;
 using HackerRank.Challenges.Strings;
 using HackerRank.Challenges.Sorting;
 using HackerRank.Challenges.GraphTheory;
@@ -14,7 +15,7 @@ namespace HackerRank
     {
         static void Main(string[] args)
         {
-            IChallenge challenge = new FindtheMedian();
+            IChallenge challenge = new AppleAndOrange();
             challenge.Run();
         }
     }
