@@ -7,13 +7,14 @@ namespace HackerRank.Challenges.Sorting
     {
         public void Run()
         {
-            string[] unsorted = new string[]{"31415926535897932384626433832795","1","3","10","3","5"};
-            Console.WriteLine($"Original array:{string.Join('-', unsorted)}");
-            
+            int n = Convert.ToInt32(Console.ReadLine());
+            string[] unsorted = new string[n];
+            for(int unsorted_i = 0; unsorted_i < n; unsorted_i++){
+                unsorted[unsorted_i] = Console.ReadLine();   
+            }
             unsorted.IntroSort((string a,string b) => {
                 return a.CompareOrdinalTo(b);
             });
-
             Console.WriteLine(string.Join("\n",unsorted));
         }
     }

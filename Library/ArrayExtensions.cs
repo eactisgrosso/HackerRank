@@ -7,8 +7,14 @@ namespace HackerRank.Library
     {
         const int IntroSortSizeThreshold = 16;
 
+        public static void Fill<T>(this T[] array, T value ) {
+            for ( int i = 0; i < array.Length;i++ ) {
+                array[i] = value;
+            }
+        }
         public static bool Swap<T>(this T[] array, long index1, long index2)
         {
+            if (index1 == index2) return false;
             if(array.Length <= index1 || array.Length <= index2) return false;
 
             T temp = array[index1];
@@ -16,6 +22,11 @@ namespace HackerRank.Library
             array[index2] = temp;
 
             return true;
+        }
+
+        public static T Median<T>(this T[] array) where T : IComparable<T>
+        {
+            return array.QuickSelect((array.Length - 1)/2, Comparer<T>.Default.Compare);
         }
 
         #region Sorting
@@ -52,43 +63,61 @@ namespace HackerRank.Library
             array.QuickSort<T>(0, array.Length - 1, comparison);
         }
 
-        private static void QuickSort<T>(this T[] array, int lo, int hi, Comparison<T> comparison) 
+        private static void QuickSort<T>(this T[] array, int start, int end, Comparison<T> comparison) 
         {
-            if (lo >= hi) return;
+            if (start >= end) return;
 
-            int index = Partition(array, lo, hi, comparison);
-            if (lo < index - 1) { //sort left half
-                QuickSort(array, lo, index - 1, comparison);
+            int pivotIndex = Partition(array, start, end, (start + end)/2, comparison);
+            if (start < pivotIndex - 1) { //sort left half
+                QuickSort(array, start, pivotIndex - 1, comparison);
             }
-            if (index < hi){ //sort right half
-                QuickSort(array, index, hi, comparison);
+            if (pivotIndex < end){ //sort right half
+                QuickSort(array, pivotIndex, end, comparison);
             }
         }
 
-        private static int Partition<T>(T[] array, int lo, int hi, Comparison<T> comparison)
+        public static T QuickSelect<T>(this T[] array, int i, Comparison<T> comparison) where T : IComparable<T>
         {
-            T pivot = array[(lo + hi)/2]; //pick pivot point
+            return array.QuickSelect(i, 0, array.Length - 1, comparison);
+        }
 
-            while(lo <= hi){
+        private static T QuickSelect<T>(this T[] array, int k, int start, int end, Comparison<T> comparison) where T : IComparable<T>
+        {
+            if (start == end) return array[start];
+
+            var pivotIndex = Partition<T>(array, start, end, (start + end)/2, comparison);
+            if (start == end) 
+                return array[pivotIndex];
+            else if (k < pivotIndex)
+                return array.QuickSelect(k, start, pivotIndex - 1, comparison);
+            else
+                return array.QuickSelect(k, pivotIndex, end, comparison);
+        }
+
+        private static int Partition<T>(T[] array, int start, int end, int pivotIndex, Comparison<T> comparison)
+        {
+            T pivot = array[pivotIndex]; 
+
+            while(start <= end){
                 //find element on left that should be on right
-                while(comparison(array[lo],pivot)<0){
-                    lo++;
+                while(comparison(array[start],pivot)<0){
+                    start++;
                 }
                 
                 //find element on right that should be on left
-                while(comparison(array[hi],pivot)>0){
-                    hi--;
+                while(comparison(array[end],pivot)>0){
+                    end--;
                 }     
 
                 //swap elements, and move left and right indices
-                if (lo <= hi) {
-                    array.Swap(lo, hi);
-                    lo++;
-                    hi--;
+                if (start <= end) {
+                    array.Swap(start,end);
+                    start++;
+                    end--;
                 }
             }
-
-            return lo;
+       
+            return start;
         }
 
         public static void MergeSort<T>(this T[] array)
@@ -101,27 +130,27 @@ namespace HackerRank.Library
              MergeSort(array, new T[array.Length], 0, array.Length - 1, comparison);
         }
 
-        private static void MergeSort<T>(T[] array, T[] helper, int lo, int hi, Comparison<T> comparison){
-            if (lo >= hi) return;
+        private static void MergeSort<T>(T[] array, T[] helper, int start, int end, Comparison<T> comparison){
+            if (start >= end) return;
 
-            int pivot = (lo + hi) / 2;
-            MergeSort(array, helper, lo, pivot, comparison); //Sort left half
-            MergeSort(array, helper, pivot + 1, hi, comparison); //Sort right half
-            MergeHalves(array, helper, lo, pivot, hi, comparison);
+            int pivot = (start + end) / 2;
+            MergeSort(array, helper, start, pivot, comparison); //Sort left half
+            MergeSort(array, helper, pivot + 1, end, comparison); //Sort right half
+            MergeHalves(array, helper, start, pivot, end, comparison);
         }
 
-        private static void MergeHalves<T>(T[] array, T[] helper, int lo, int pivot, int hi, Comparison<T> comparison){
+        private static void MergeHalves<T>(T[] array, T[] helper, int start, int pivot, int end, Comparison<T> comparison){
             //Copy both halves into a helper array
-            for (int i = lo; i <= hi; i++)
+            for (int i = start; i <= end; i++)
                 helper[i] = array[i];
 
-            int left = lo;
+            int left = start;
             int right = pivot + 1;
-            int current = lo;
+            int current = start;
 
             //Iterate through helper array. Compare the left and right half, copying back 
             //the smaller element from the two halves into the original array
-            while(left <= pivot && right <= hi){
+            while(left <= pivot && right <= end){
                 if (comparison(helper[left],helper[right]) <= 0){
                     array[current] = helper[left];
                     left++;
@@ -148,37 +177,37 @@ namespace HackerRank.Library
             array.HeapSort(0, array.Length - 1,comparison);
         }
 
-        private static void HeapSort<T>(this T[] array, int lo, int hi, Comparison<T> comparison)
+        private static void HeapSort<T>(this T[] array, int start, int end, Comparison<T> comparison)
         {
-            int n = hi - lo + 1;
+            int n = end - start + 1;
             for (int i = n/2; i >= 1; i--)
-                DownHeap(array, i, n, lo, comparison);
+                DownHeap(array, i, n, start, comparison);
            
             for (int i = n; i > 1; i--)
             {
-                array.Swap(lo, lo + i - 1);
-                DownHeap(array, 1, i - 1, lo, comparison);
+                array.Swap(start, start + i - 1);
+                DownHeap(array, 1, i - 1, start, comparison);
             }
         }
 
-        private static void DownHeap<T>(T[] array, int i, int n, int lo, Comparison<T> comparison)
+        private static void DownHeap<T>(T[] array, int i, int n, int start, Comparison<T> comparison)
         {
-            T current = array[lo + i - 1];
+            T current = array[start + i - 1];
             T parent;
             int child;
             while (i <= n / 2)
             {
                 child = 2 * i;
-                parent = array[lo + child - 1];
-                if (child < n && (parent == null || comparison(array[lo + child],parent) > 0))
+                parent = array[start + child - 1];
+                if (child < n && (parent == null || comparison(array[start + child],parent) > 0))
                     child++;
-                parent = array[lo + child - 1];
+                parent = array[start + child - 1];
                 if (parent == null || comparison(current, parent) > 0)
                     break;
-                array[lo + i - 1] = parent;
+                array[start + i - 1] = parent;
                 i = child;
             }
-            array[lo + i - 1] = current;
+            array[start + i - 1] = current;
         }
 
         public static void InsertionSort<T>(this T[] array)
@@ -191,15 +220,15 @@ namespace HackerRank.Library
             array.InsertionSort(0, array.Length - 1, comparison);
         }
 
-        private static void InsertionSort<T>(this T[] array, int lo, int hi, Comparison<T> comparison)
+        private static void InsertionSort<T>(this T[] array, int start, int end, Comparison<T> comparison)
         {
             int i, j;
             T unsorted;
-            for (i = lo; i < hi; i++)
+            for (i = start; i < end; i++)
             {
                 unsorted = array[i + 1];
                 j = i;
-                while (j >= lo && comparison(array[j],unsorted) > 0)
+                while (j >= start && comparison(array[j],unsorted) > 0)
                 {
                     array[j + 1] = array[j];
                     j--;
@@ -217,31 +246,31 @@ namespace HackerRank.Library
             array.IntroSort<T>(0, array.Length - 1, 2 * array.Length.FloorLog2(), comparison);
         }
         
-        private static void IntroSort<T>(this T[] array, int lo, int hi, int depth, Comparison<T> comparison)
+        private static void IntroSort<T>(this T[] array, int start, int end, int depth, Comparison<T> comparison)
         {
-            if (lo >= hi) return;
+            if (start >= end) return;
 
-            int partitionSize = hi - lo + 1;
+            int partitionSize = end - start + 1;
             if (partitionSize == 1) return;
             
             if (partitionSize <= IntroSortSizeThreshold)
             {
-                array.InsertionSort(lo, hi, comparison);
+                array.InsertionSort(start, end, comparison);
                 return;
             }
 
             if (depth == 0)
             {
-                array.HeapSort(lo, hi, comparison);
+                array.HeapSort(start, end, comparison);
                 return;
             }
 
-            int index = Partition(array, lo, hi, comparison);
-            if (lo < index - 1) {
-                IntroSort(array, lo, index - 1, --depth, comparison);
+            int index = Partition(array, start, end, (start + end)/2, comparison);
+            if (start < index - 1) {
+                IntroSort(array, start, index - 1, --depth, comparison);
             }
-            if (index < hi){
-                IntroSort(array, index, hi, --depth, comparison);
+            if (index < end){
+                IntroSort(array, index, end, --depth, comparison);
             }
         }
 

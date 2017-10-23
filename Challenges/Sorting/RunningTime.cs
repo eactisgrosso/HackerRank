@@ -1,16 +1,11 @@
 using System;
+using System.Linq;
 using HackerRank.Library;
 
 namespace HackerRank.Challenges.Sorting 
 {
     public class RunningTime : IChallenge
     {
-        public void Run()
-        {
-            int[] A = new int[]{2,1,3,1,2};
-            CountShifts(A);
-        }
-
         static void CountShifts(int[] A) 
         {
             int shifted = 0, j = 0; 
@@ -25,6 +20,13 @@ namespace HackerRank.Challenges.Sorting
                 A[j + 1] = value; 
             } 
             Console.WriteLine(shifted);
+        }
+
+        public void Run()
+        {
+            Console.ReadLine(); 
+            int [] _ar = (from s in Console.ReadLine().Split() select Convert.ToInt32(s)).ToArray();
+            CountShifts(_ar); 
         }
     }
 }

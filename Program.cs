@@ -14,7 +14,7 @@ namespace HackerRank
     {
         static void Main(string[] args)
         {
-            IChallenge challenge = new BirthdayCakeCandles();
+            IChallenge challenge = new FindtheMedian();
             challenge.Run();
         }
     }

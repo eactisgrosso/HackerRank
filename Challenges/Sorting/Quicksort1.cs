@@ -1,24 +1,26 @@
 using System;
+using System.Collections.Generic;
 using HackerRank.Library;
 
 namespace HackerRank.Challenges.Sorting 
 {
-    public class InsertionSort2 : IChallenge
+    public class Quicksort1 : IChallenge
     {
-        static void insertionSort(int[] ar) {
-            int j, next;
-            for (var i = 0; i < ar.Length - 1; i++)
+        static void partition(int[] ar) {
+            var pivot = ar[0];
+            var left = new List<int>(){pivot};
+            var right = new List<int>();
+            
+            for(var i = 1; i < ar.Length; i++)
             {
-                j = i;
-                next = ar[i + 1];
-                while (j >= 0 && ar[j] > next)
-                {
-                    ar[j + 1] = ar[j];
-                    j--;
-                }
-                ar[j + 1] = next;
-                Console.WriteLine(string.Join(" ", ar));
+                if (ar[i] < pivot) left.Insert(0,ar[i]);
+                else if (ar[i] > pivot) right.Add(ar[i]);
+                else left.Add(ar[i]);
             }
+
+            left.AddRange(right);
+
+            Console.WriteLine(string.Join(" ", left));
         }
         
         public void Run()
@@ -32,7 +34,7 @@ namespace HackerRank.Challenges.Sorting
                   _ar[_ar_i] = Convert.ToInt32(split_elements[_ar_i]); 
            }
 
-           insertionSort(_ar);
+           partition(_ar);
         }
     }
 }
