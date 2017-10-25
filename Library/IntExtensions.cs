@@ -36,5 +36,10 @@ namespace HackerRank.Library
             digits.Reverse();
             return digits.ToArray();
         }
+
+        public static bool IsDivisibleBy(this int x, int n)
+        {
+            return (x % n) == 0;
+        }
     }
 }

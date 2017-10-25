@@ -7,11 +7,6 @@ namespace HackerRank.Library
     {
         const int IntroSortSizeThreshold = 16;
 
-        public static void Fill<T>(this T[] array, T value ) {
-            for ( int i = 0; i < array.Length;i++ ) {
-                array[i] = value;
-            }
-        }
         public static bool Swap<T>(this T[] array, long index1, long index2)
         {
             if (index1 == index2) return false;
@@ -24,6 +19,24 @@ namespace HackerRank.Library
             return true;
         }
 
+        public static void Fill<T>(this T[] array, T value ) {
+            for ( int i = 0; i < array.Length;i++ ) {
+                array[i] = value;
+            }
+        }
+
+        public static void Reverse<T>(this T[] array){
+            array.Reverse(0, array.Length - 1);
+        }
+
+        public static void Reverse<T>(this T[] array, int from, int to){
+            while (from < to) {
+                array.Swap(to,from);
+                from++;
+                to--;
+            }
+        }
+                
         public static T Median<T>(this T[] array) where T : IComparable<T>
         {
             return array.QuickSelect((array.Length - 1)/2, Comparer<T>.Default.Compare);

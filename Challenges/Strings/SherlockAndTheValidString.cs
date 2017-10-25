@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace HackerRank.Challenges.Strings 
 {
 
-    public class SherlockNTheValidString : IChallenge
+    public class SherlockAndTheValidString : IChallenge
     {
         const short MAX_LENGTH = 26;
 
