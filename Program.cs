@@ -15,7 +15,7 @@ namespace HackerRank
     {
         static void Main(string[] args)
         {
-            IChallenge challenge = new AppleAndOrange();
+            IChallenge challenge = new BiggerIsGreater();
             challenge.Run();
         }
     }
