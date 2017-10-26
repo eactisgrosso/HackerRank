@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-using HackerRank.Challenges.Warmup;
-using HackerRank.Challenges.Implementation;
-using HackerRank.Challenges.Strings;
-using HackerRank.Challenges.Sorting;
-using HackerRank.Challenges.GraphTheory;
-using HackerRank.Challenges.DynamicProgramming;
+using HackerRank.Algorithms.Warmup;
+using HackerRank.Algorithms.Implementation;
+using HackerRank.Algorithms.Strings;
+using HackerRank.Algorithms.Sorting;
+using HackerRank.Algorithms.GraphTheory;
+using HackerRank.Algorithms.DynamicProgramming;
 
 namespace HackerRank
 {
@@ -15,7 +15,7 @@ namespace HackerRank
     {
         static void Main(string[] args)
         {
-            IChallenge challenge = new Anagram();
+            IChallenge challenge = new FraudulentActivityNotifications();
             challenge.Run();
         }
     }

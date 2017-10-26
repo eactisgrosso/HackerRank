@@ -42,6 +42,32 @@ namespace HackerRank.Library
             return array.QuickSelect((array.Length - 1)/2, Comparer<T>.Default.Compare);
         }
 
+        public static double Median(this int[] array)
+        {
+            var oddMiddle = (array.Length - 1)/2;
+            var oddMedian = array.QuickSelect(oddMiddle, Comparer<int>.Default.Compare);
+
+            if (array.Length % 2 == 0) //even
+                return (oddMedian + array[oddMiddle + 1]) / 2.0;
+
+            return oddMedian;
+        }
+
+         public static double FrequencyMedian(this int[] array, int length) 
+         {
+            int sum = 0;
+            for (int i = 0; i < array.Length; i++) {
+                sum += array[i];
+                if (2 * sum < length)
+                    continue;
+                else if (2 * sum == length)
+                    return (2 * i + 1) / 2.0;
+                else
+                    return i * 1.0;
+            }
+            return -1.0;
+        }
+
         #region Sorting
         public static void BubbleSort<T>(this T[] array)
         {
