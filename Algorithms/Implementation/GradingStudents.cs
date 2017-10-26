@@ -1,9 +1,9 @@
 using System;
 using System.Linq;
-using HackerRank.Library;
 
-namespace HackerRank.Algorithms.Implementation 
+namespace HackerRank.Algorithms.Implementation
 {
+    // https://www.hackerrank.com/challenges/grading/problem
     public class GradingStudents : IChallenge
     { 
         static int[] solve(int[] grades){

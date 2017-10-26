@@ -1,9 +1,9 @@
 using System;
-using System.Linq;
 using HackerRank.Library;
 
-namespace HackerRank.Algorithms.Implementation 
+namespace HackerRank.Algorithms.Implementation
 {
+    // https://www.hackerrank.com/challenges/the-time-in-words/problem
     public class TheTimeInWords : IChallenge
     { 
         public void Run()

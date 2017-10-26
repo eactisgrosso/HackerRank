@@ -1,10 +1,9 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using HackerRank.Library;
 
-namespace HackerRank.Algorithms.Implementation 
+namespace HackerRank.Algorithms.Implementation
 {
+    // https://www.hackerrank.com/challenges/kangaroo/problem
     public class Kangaroo : IChallenge
     { 
         static string kangaroo(int x1, int v1, int x2, int v2) {

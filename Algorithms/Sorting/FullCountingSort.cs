@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using HackerRank.Library;
 
-namespace HackerRank.Algorithms.Sorting 
+namespace HackerRank.Algorithms.Sorting
 {
+    // https://www.hackerrank.com/challenges/countingsort4/problem
     public class FullCountingSort : IChallenge
     {
         const int SIZE = 100;

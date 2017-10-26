@@ -1,8 +1,8 @@
 using System;
-using HackerRank.Library;
 
-namespace HackerRank.Algorithms.Sorting 
+namespace HackerRank.Algorithms.Sorting
 {
+    // https://www.hackerrank.com/challenges/insertionsort2/problem
     public class InsertionSort2 : IChallenge
     {
         static void insertionSort(int[] ar) {

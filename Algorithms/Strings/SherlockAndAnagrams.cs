@@ -5,6 +5,7 @@ using HackerRank.Library;
 
 namespace HackerRank.Algorithms.Strings 
 {
+    // https://www.hackerrank.com/challenges/sherlock-and-anagrams/problem
     public class SherlockAndAnagrams : IChallenge
     {
         static int sherlockAndAnagrams(string s){

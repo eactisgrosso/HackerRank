@@ -1,9 +1,9 @@
 using System;
 using System.Linq;
-using HackerRank.Library;
 
-namespace HackerRank.Algorithms.Sorting 
+namespace HackerRank.Algorithms.Sorting
 {
+    // https://www.hackerrank.com/challenges/correctness-invariant/problem
     public class CorrectnessInvariant : IChallenge
     {
         static void insertionSort (int[] A) { 

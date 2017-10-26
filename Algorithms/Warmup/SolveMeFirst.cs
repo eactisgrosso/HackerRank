@@ -2,6 +2,7 @@ using System;
 
 namespace HackerRank.Algorithms.Warmup 
 {
+    // https://www.hackerrank.com/challenges/solve-me-first/problem
     public class SolveMeFirst : IChallenge
     {
         static int solveMeFirst(int a, int b) { 

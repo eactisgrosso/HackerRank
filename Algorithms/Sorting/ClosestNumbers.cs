@@ -6,6 +6,7 @@ namespace HackerRank.Algorithms.Sorting
 {
     public class ClosestNumbers : IChallenge
     {
+        // https://www.hackerrank.com/challenges/closest-numbers/problem
         public void Run()
         {
             var n = Convert.ToInt32(Console.ReadLine());

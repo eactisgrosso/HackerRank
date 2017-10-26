@@ -1,10 +1,10 @@
 using System;
-using System.Linq;
 using System.Collections.Generic;
 using HackerRank.Library;
 
-namespace HackerRank.Algorithms.Sorting 
+namespace HackerRank.Algorithms.Sorting
 {
+    // https://www.hackerrank.com/challenges/fraudulent-activity-notifications/problem
     public class FraudulentActivityNotifications : IChallenge
     {
         const int MAX_EXPENDITURE = 201;

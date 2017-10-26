@@ -1,10 +1,9 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using HackerRank.Library;
 
-namespace HackerRank.Algorithms.Implementation 
+namespace HackerRank.Algorithms.Implementation
 {
+    // https://www.hackerrank.com/challenges/bigger-is-greater/problem
     public class BiggerIsGreater : IChallenge
     { 
         public void Run()

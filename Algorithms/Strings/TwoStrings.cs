@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace HackerRank.Algorithms.Strings 
 {
+    // https://www.hackerrank.com/challenges/two-strings/problem
     public class TwoStrings : IChallenge
     {
         static string twoStrings(string s1, string s2){

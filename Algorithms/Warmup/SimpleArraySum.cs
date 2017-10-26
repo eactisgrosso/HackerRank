@@ -2,6 +2,7 @@ using System;
 
 namespace HackerRank.Algorithms.Warmup 
 {
+    // https://www.hackerrank.com/challenges/simple-array-sum/problem 
     public class SimpleArraySum : IChallenge
     {
         static int simpleArraySum(int n, int[] ar) {

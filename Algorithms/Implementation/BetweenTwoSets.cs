@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Linq;
-using System.Collections.Generic;
-using System.Text;
 using HackerRank.Library;
 
 namespace HackerRank.Algorithms.Implementation
 {
+    // https://www.hackerrank.com/challenges/between-two-sets/problem
     public class BetweenTwoSets : IChallenge
     {
         static int getTotalX(int[] a, int[] b) //Brute force approach, performant enough to pass the test cases

@@ -1,10 +1,9 @@
 using System;
-using System.Linq;
-using System.Numerics;
 using HackerRank.Library;
 
-namespace HackerRank.Algorithms.Implementation 
+namespace HackerRank.Algorithms.Implementation
 {
+    // https://www.hackerrank.com/challenges/extra-long-factorials/problem
     public class ExtraLongFactorials : IChallenge
     { 
         public void Run()

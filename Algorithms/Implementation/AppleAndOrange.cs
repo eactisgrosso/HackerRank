@@ -1,11 +1,10 @@
 using System;
-using System.Linq;
-using HackerRank.Library;
 
-namespace HackerRank.Algorithms.Implementation 
+namespace HackerRank.Algorithms.Implementation
 {
     public class AppleAndOrange : IChallenge
     { 
+        // https://www.hackerrank.com/challenges/apple-and-orange/problem
        
         public void Run()
         {

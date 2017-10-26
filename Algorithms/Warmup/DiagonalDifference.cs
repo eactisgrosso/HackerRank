@@ -1,7 +1,8 @@
 using System;
 
 namespace HackerRank.Algorithms.Warmup 
-{
+{   
+    // https://www.hackerrank.com/challenges/diagonal-difference/problem
     public class DiagonalDifference : IChallenge
     {
         public void Run()

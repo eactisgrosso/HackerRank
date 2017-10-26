@@ -3,6 +3,7 @@ using System.Text;
 
 namespace HackerRank.Algorithms.Warmup 
 {
+    // https://www.hackerrank.com/challenges/staircase/problem
     public class Staircase : IChallenge
     {
         public void Run()

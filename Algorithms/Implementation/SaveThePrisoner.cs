@@ -1,9 +1,8 @@
 using System;
-using System.Linq;
-using HackerRank.Library;
 
-namespace HackerRank.Algorithms.Implementation 
+namespace HackerRank.Algorithms.Implementation
 {
+    // https://www.hackerrank.com/challenges/save-the-prisoner/problem
     public class SaveThePrisoner : IChallenge
     { 
         static int saveThePrisoner(int n, int m, int s){

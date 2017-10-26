@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using HackerRank.Library;
 
-namespace HackerRank.Algorithms.Sorting 
+namespace HackerRank.Algorithms.Sorting
 {
+    // https://www.hackerrank.com/challenges/quicksort1/problem
     public class Quicksort1 : IChallenge
     {
         static void partition(int[] ar) {

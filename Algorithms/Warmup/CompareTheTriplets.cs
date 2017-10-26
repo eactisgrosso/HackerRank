@@ -2,6 +2,7 @@ using System;
 
 namespace HackerRank.Algorithms.Warmup 
 {
+    // https://www.hackerrank.com/challenges/compare-the-triplets/problem
     public class CompareTheTriplets : IChallenge
     {
         static int[] solve(int a0, int a1, int a2, int b0, int b1, int b2){

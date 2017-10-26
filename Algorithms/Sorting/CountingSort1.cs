@@ -1,11 +1,10 @@
 using System;
-using System.Collections.Generic;
-using HackerRank.Library;
 
-namespace HackerRank.Algorithms.Sorting 
+namespace HackerRank.Algorithms.Sorting
 {
     public class CountingSort1 : IChallenge
     {
+        // https://www.hackerrank.com/challenges/countingsort1/problem
         public void Run()
         {
             Console.ReadLine();

@@ -1,11 +1,11 @@
 using System;
 using System.Linq;
-using HackerRank.Library;
 
-namespace HackerRank.Algorithms.Sorting 
+namespace HackerRank.Algorithms.Sorting
 {
     public class RunningTime : IChallenge
     {
+        // https://www.hackerrank.com/challenges/runningtime/problem
         static void CountShifts(int[] A) 
         {
             int shifted = 0, j = 0; 

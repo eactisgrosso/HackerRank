@@ -1,8 +1,8 @@
 using System;
-using System.Collections.Generic;
 
-namespace HackerRank.Algorithms.Strings 
+namespace HackerRank.Algorithms.Strings
 {
+    // https://www.hackerrank.com/challenges/reduced-string/problem
     public class SuperReducedString : IChallenge
     {
         static string super_reduced_string(string s){

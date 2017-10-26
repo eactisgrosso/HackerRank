@@ -1,12 +1,12 @@
 using System;
 using System.Linq;
-using System.Collections.Generic;
 using HackerRank.Library;
 
-namespace HackerRank.Algorithms.Strings 
+namespace HackerRank.Algorithms.Strings
 {
     public class Anagram : IChallenge
     {
+        // https://www.hackerrank.com/challenges/anagram/problem
         static int anagram(string s){
             if (s.Length % 2 > 0) return -1;
 

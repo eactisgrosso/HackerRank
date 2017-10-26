@@ -1,11 +1,11 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
-using System.Text;
 using HackerRank.Library;
 
-namespace HackerRank.Algorithms.GraphTheory 
+namespace HackerRank.Algorithms.GraphTheory
 {
+    // https://www.hackerrank.com/challenges/bfsshortreach/problem
     public class BFSShortestReach : IChallenge
     {
         const short EDGE_DISTANCE = 6;
@@ -49,13 +49,16 @@ namespace HackerRank.Algorithms.GraphTheory
 
             var q = new Queue<Node>();
             var root = nodes[s];
-            root.Visited = true;
+            root.HasBeenVisited = true;
             q.Enqueue(root);
-            while (q.Count > 0) {
+            while (q.Count > 0) 
+            {
                 Node node = q.Dequeue();
-                foreach(var edge in node.Adjacent){
-                    if (!edge.Visited){
-                        edge.Visited = true;
+                foreach(var edge in node.Adjacent)
+                {
+                    if (!edge.HasBeenVisited)
+                    {
+                        edge.HasBeenVisited = true;
                         q.Enqueue(edge);
                         distance[edge.Id] = (short)(distance[node.Id] + EDGE_DISTANCE);
                     }
@@ -63,18 +66,6 @@ namespace HackerRank.Algorithms.GraphTheory
             };
             
             return distance;
-        }
-
-        class Node {
-            public short Id {get; set;}
-            public LinkedList<Node> Adjacent {get;private set;}
-
-            public bool Visited {get; set;}
-
-            public Node(short id){
-                Id = id;
-                Adjacent = new LinkedList<Node>();
-            }
         }
     }
 }

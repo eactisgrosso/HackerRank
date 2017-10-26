@@ -2,6 +2,7 @@ using System;
 
 namespace HackerRank.Algorithms.Warmup 
 {
+    // https://www.hackerrank.com/challenges/mini-max-sum/problem
     public class MiniMaxSum : IChallenge
     {
         public void Run()

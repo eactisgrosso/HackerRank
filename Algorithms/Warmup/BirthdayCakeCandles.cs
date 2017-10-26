@@ -2,6 +2,7 @@ using System;
 
 namespace HackerRank.Algorithms.Warmup 
 {
+    // https://www.hackerrank.com/challenges/birthday-cake-candles/problem
     public class BirthdayCakeCandles : IChallenge
     {
         static int birthdayCakeCandles(int n, int[] ar) {

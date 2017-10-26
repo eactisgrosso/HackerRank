@@ -1,8 +1,8 @@
 using System;
-using System.Text;
 
-namespace HackerRank.Algorithms.Warmup 
+namespace HackerRank.Algorithms.Warmup
 {
+    // https://www.hackerrank.com/challenges/time-conversion/problem
     public class TimeConversion : IChallenge
     {
         static string timeConversion(string s) 

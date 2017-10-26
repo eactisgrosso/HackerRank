@@ -1,10 +1,8 @@
 using System;
-using System.Linq;
-using System.Collections.Generic;
 
-namespace HackerRank.Algorithms.Strings 
+namespace HackerRank.Algorithms.Strings
 {
-
+     // https://www.hackerrank.com/challenges/sherlock-and-valid-string/problem
     public class SherlockAndTheValidString : IChallenge
     {
         const short MAX_LENGTH = 26;

@@ -1,10 +1,10 @@
 using System;
-using HackerRank.Library;
 
-namespace HackerRank.Algorithms.Sorting 
+namespace HackerRank.Algorithms.Sorting
 {
     public class InsertionSort1 : IChallenge
     {
+        // https://www.hackerrank.com/challenges/insertionsort1/problem
         static void insertionSort(int[] ar) {
             var i = ar.Length - 1;
             var unsorted = ar[i];

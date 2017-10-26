@@ -15,7 +15,7 @@ namespace HackerRank
     {
         static void Main(string[] args)
         {
-            IChallenge challenge = new FraudulentActivityNotifications();
+            IChallenge challenge = new JourneyToTheMoon();
             challenge.Run();
         }
     }
