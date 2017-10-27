@@ -8,6 +8,7 @@ using HackerRank.Algorithms.Strings;
 using HackerRank.Algorithms.Sorting;
 using HackerRank.Algorithms.GraphTheory;
 using HackerRank.Algorithms.DynamicProgramming;
+using HackerRank.Algorithms.BitManipulation;
 
 namespace HackerRank
 {
@@ -15,7 +16,7 @@ namespace HackerRank
     {
         static void Main(string[] args)
         {
-            IChallenge challenge = new Candies();
+            IChallenge challenge = new TwoCharacters();
             challenge.Run();
         }
     }
