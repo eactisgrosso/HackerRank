@@ -16,7 +16,7 @@ namespace HackerRank
     {
         static void Main(string[] args)
         {
-            IChallenge challenge = new TwoCharacters();
+            IChallenge challenge = new MaximizingXOR();
             challenge.Run();
         }
     }
