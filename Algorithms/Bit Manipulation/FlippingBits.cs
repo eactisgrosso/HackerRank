@@ -1,9 +1,6 @@
 using System;
-using System.Linq;
-using System.Numerics;
-using HackerRank.Library;
 
-namespace HackerRank.Algorithms.BitManipulation 
+namespace HackerRank.Algorithms.BitManipulation
 {
     // https://www.hackerrank.com/challenges/flipping-bits/problem
     public class FlippingBits : IChallenge

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace HackerRank.Library
 {
-    public static class IntExtensions
+    public static class NumericExtensions
     {
         static readonly string[] UNITS = new[] { 
             "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", 
@@ -16,11 +16,15 @@ namespace HackerRank.Library
         };
 
         public static int FloorLog2(this int i){
+            return (int)((long)i).FloorLog2();
+        }
+
+        public static long FloorLog2(this long l){
             int result = 0;
-            while (i >= 1)
+            while (l >= 1)
             {
                 result++;
-                i = i / 2;
+                l = l / 2;
             }
             return result;
         }
@@ -61,7 +65,7 @@ namespace HackerRank.Library
         {
             return (x / GCD(x, n)) * n;
         }
-
+        
         public static string ToWords(this int n)
         {
             if (n == 0)
