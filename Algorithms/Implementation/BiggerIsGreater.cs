@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using HackerRank.Library;
 
 namespace HackerRank.Algorithms.Implementation
@@ -12,7 +13,8 @@ namespace HackerRank.Algorithms.Implementation
             for(var i = 0; i < n; i++)
             {
                 var input = Console.ReadLine();
-                var output = input.LowestPermutation();
+                var array = input.ToCharArray();
+                var output = new string(array.LowestPermutation());
                 if (input == output){
                     Console.WriteLine("no answer");
                 }else{

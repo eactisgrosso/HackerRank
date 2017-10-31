@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
 using System.Text;
 
@@ -15,11 +16,13 @@ namespace HackerRank.Library
             "zero", "ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety" 
         };
 
-        public static int FloorLog2(this int i){
-            return (int)((long)i).FloorLog2();
+        public static IEnumerable<int> Range(this int from, int to)
+        {
+            return Enumerable.Range(from, to);
         }
 
-        public static long FloorLog2(this long l){
+        public static long FloorLog2(this long l)
+        {
             int result = 0;
             while (l >= 1)
             {
@@ -27,6 +30,27 @@ namespace HackerRank.Library
                 l = l / 2;
             }
             return result;
+        }
+
+        public static int FloorLog2(this int i)
+        {
+            int result = 0;
+            while (i >= 1)
+            {
+                result++;
+                i = i / 2;
+            }
+            return result;
+        }
+
+        public static int CeilingLog2(this long l)
+        {
+            return (int)Math.Ceiling(Math.Log(l,2));
+        }
+
+        public static long PowerOf2(this int i)
+        {
+            return 1L<<i;
         }
 
         public static BigInteger Factorial(this int n)
@@ -52,7 +76,11 @@ namespace HackerRank.Library
 
         public static bool IsDivisibleBy(this int x, int n)
         {
-            return (x % n) == 0;
+            return ((double)x % n) == 0;
+        }
+        public static bool IsDivisibleBy(this double x, int n)
+        {
+            return ((double)x % n) == 0;
         }
 
         public static int GCD(this int x, int n)

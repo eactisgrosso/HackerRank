@@ -16,7 +16,7 @@ namespace HackerRank
     {
         static void Main(string[] args)
         {
-            IChallenge challenge = new AndProduct();
+            IChallenge challenge = new AbsolutePermutation();
             challenge.Run();
         }
     }

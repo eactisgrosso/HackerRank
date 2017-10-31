@@ -7,6 +7,11 @@ namespace HackerRank.Library
     {
         const int IntroSortSizeThreshold = 16;
 
+        public static string ToString<T>(this IEnumerable<T> array, string separator)
+        {
+            return string.Join(separator, array);
+        }
+
         public static bool Swap<T>(this T[] array, long index1, long index2)
         {
             if (index1 == index2) return false;
@@ -69,6 +74,36 @@ namespace HackerRank.Library
         }
 
         #region Sorting
+
+        public static T[] LowestPermutation<T>(this T[] array)
+        {
+            return array.LowestPermutation(Comparer<T>.Default.Compare);            
+        }
+        public static T[] LowestPermutation<T>(this T[] array, Comparison<T> comparison) {
+            var result = new T[array.Length];
+            Array.Copy(array, result, array.Length);
+
+            //Find non-increasing suffix
+            int i;
+            for(i = result.Length-1; i > 0; i--){
+                if (comparison(result[i - 1],result[i]) < 0)
+                break;
+            }
+
+            if (i <= 0) //Already the last permutation
+                return result;
+            
+            //Find greater than the pivot in the suffix, and swap them
+            int j;
+            for(j = result.Length - 1; comparison(result[j],result[i - 1]) <= 0; j--)
+            {}
+            result.Swap(j, i - 1);
+            
+            result.Reverse(i, result.Length-1); //Reverse suffix
+
+            return result;
+        }
+
         public static void BubbleSort<T>(this T[] array)
         {
             array.BubbleSort<T>(Comparer<T>.Default.Compare);
