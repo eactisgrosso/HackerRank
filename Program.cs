@@ -16,7 +16,7 @@ namespace HackerRank
     {
         static void Main(string[] args)
         {
-            IChallenge challenge = new AbsolutePermutation();
+            IChallenge challenge = new PalindromeIndex();
             challenge.Run();
         }
     }

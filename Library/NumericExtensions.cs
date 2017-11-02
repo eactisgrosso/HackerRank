@@ -21,6 +21,11 @@ namespace HackerRank.Library
             return Enumerable.Range(from, to);
         }
 
+        public static bool IsPowerOfTwo(this int i)
+        {
+            return (i & (i - 1)) == 0;
+        }
+
         public static long FloorLog2(this long l)
         {
             int result = 0;
