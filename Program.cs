@@ -16,7 +16,7 @@ namespace HackerRank
     {
         static void Main(string[] args)
         {
-            IChallenge challenge = new PalindromeIndex();
+            IChallenge challenge = new ClimbingTheLeaderboard();
             challenge.Run();
         }
     }
